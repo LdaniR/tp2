@@ -7,12 +7,12 @@ package usuarios.modelos;
  */
 public class Encargado {
     private String mail;
-    private String contraseña;
+    private String clave;
     private String nombre;
     private String apellido;
     
        public void mostrar(){
-        System.out.println("El encargado: "+ mail +  "\n" + contraseña + "\n" + nombre + "\n" + apellido + "\n");
+        System.out.println("El encargado: "+ mail +  "\n" + clave + "\n" + nombre + "\n" + apellido + "\n");
         
     } 
     
