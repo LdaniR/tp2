@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package producto.vistas;
+package principal.controladores;
 
 import javax.swing.UIManager;
+import producto.vistas.VentanaAMProducto;
 //import producto.vistas.VentanaAMProducto;
 //import usuarios.vistas.VentanaAMCliente;
 //import usuarios.vistas.VentanaAMEmpleado;
@@ -46,7 +47,7 @@ public class ControladorPrincipalGUI {
         ventana.setLocationRelativeTo(null);
         ventana.setTitle("Nuevo empleado");
         ventana.setVisible(true);
-        */
+        
        //ENCARGADO
        /*
         VentanaAMEncargado ventana = new VentanaAMEncargado(null);

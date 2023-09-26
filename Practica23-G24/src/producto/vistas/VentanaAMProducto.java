@@ -58,7 +58,7 @@ public class VentanaAMProducto extends JDialog {
 
         btnGuardar.setMnemonic('G');
         btnGuardar.setText("Guardar");
-        btnGuardar.setToolTipText("Guarda el profesor");
+        btnGuardar.setToolTipText("Guarda el producto");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarClic(evt);
@@ -80,7 +80,7 @@ public class VentanaAMProducto extends JDialog {
 
         jLabel6.setText("Estado:");
 
-        jLabel3.setText("Categoría");
+        jLabel3.setText("Categoría:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

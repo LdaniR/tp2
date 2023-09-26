@@ -118,7 +118,7 @@
       <Properties>
         <Property name="mnemonic" type="int" value="71"/>
         <Property name="text" type="java.lang.String" value="Guardar"/>
-        <Property name="toolTipText" type="java.lang.String" value="Guarda el profesor"/>
+        <Property name="toolTipText" type="java.lang.String" value="Guarda el producto"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarClic"/>
@@ -151,7 +151,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Categor&#xed;a"/>
+        <Property name="text" type="java.lang.String" value="Categor&#xed;a:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCategoria">

@@ -8,16 +8,17 @@ package usuarios.vistas;
 import java.awt.Dialog;
 import java.util.ArrayList;
 import javax.swing.JDialog;
-import usuarios.modelos.Cliente;
+import productos.modelos.Producto;
+import usuarios.modelos.Empleado;
 
-public class VentanaAMCliente extends JDialog {
-    private ArrayList<Cliente> clientes = new ArrayList<>();
+public class VentanaAMEmpleado extends JDialog {
+    private ArrayList<Empleado> empleados = new ArrayList<>();
     
     /**
      * Constructor
      * @param ventanaPadre ventana padre 
      */
-    public VentanaAMCliente(Dialog ventanaPadre) {
+    public VentanaAMEmpleado(Dialog ventanaPadre) {
         super(ventanaPadre, true);
         initComponents();
     }
@@ -39,7 +40,7 @@ public class VentanaAMCliente extends JDialog {
         btnCancelar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
-        passClave = new javax.swing.JPasswordField();
+        txtClave = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -55,7 +56,7 @@ public class VentanaAMCliente extends JDialog {
 
         btnGuardar.setMnemonic('G');
         btnGuardar.setText("Guardar");
-        btnGuardar.setToolTipText("Guarda el profesor");
+        btnGuardar.setToolTipText("Guarda el empleado");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarClic(evt);
@@ -74,6 +75,12 @@ public class VentanaAMCliente extends JDialog {
         jLabel4.setText("Correo:");
 
         txtCorreo.setToolTipText("Documento del profesor");
+
+        txtClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClaveActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Clave:");
 
@@ -98,7 +105,7 @@ public class VentanaAMCliente extends JDialog {
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNombre)
-                            .addComponent(passClave, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtClave, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtCorreo)
                             .addComponent(txtApellido))))
                 .addContainerGap())
@@ -119,7 +126,7 @@ public class VentanaAMCliente extends JDialog {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -136,20 +143,24 @@ public class VentanaAMCliente extends JDialog {
     }//GEN-LAST:event_btnCancelarClic
 
     private void btnGuardarClic(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClic
-        String correo = this.txtCorreo.getText().trim();
-        String apellido = this.txtApellido.getText().trim();
         String nombre = this.txtNombre.getText().trim();
-        String clave = new String(this.passClave.getPassword());
-        Cliente unCliente = new Cliente(correo, clave, apellido, nombre);
-        this.clientes.add(unCliente);
+        String apellido = this.txtApellido.getText().trim();
+        String correo = this.txtCorreo.getText().trim();
+        String clave = this.txtClave.getText().trim();
+        Empleado unEmpleado = new Empleado(correo, clave, nombre, apellido);
+        this.empleados.add(unEmpleado);
         
-        System.out.println("Clientes");
-        System.out.println("========");
-        for(Cliente c : this.clientes) {
-            c.mostrar();
+        System.out.println("Empleados");
+        System.out.println("=========");
+        for(Empleado p : this.empleados) {
+            p.mostrar();
             System.out.println();
         }
     }//GEN-LAST:event_btnGuardarClic
+
+    private void txtClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -159,8 +170,8 @@ public class VentanaAMCliente extends JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPasswordField passClave;
     private javax.swing.JTextField txtApellido;
+    private javax.swing.JPasswordField txtClave;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables

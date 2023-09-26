@@ -8,10 +8,11 @@ package usuarios.vistas;
 import java.awt.Dialog;
 import java.util.ArrayList;
 import javax.swing.JDialog;
+import usuarios.modelos.Empleado;
 import usuarios.modelos.Encargado;
 
 public class VentanaAMEncargado extends JDialog {
-    private ArrayList<Encargado> encargado = new ArrayList<>();
+    private ArrayList<Encargado> encargados = new ArrayList<>();
     
     /**
      * Constructor
@@ -39,7 +40,7 @@ public class VentanaAMEncargado extends JDialog {
         btnCancelar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
-        passClave = new javax.swing.JPasswordField();
+        txtClave = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -55,7 +56,7 @@ public class VentanaAMEncargado extends JDialog {
 
         btnGuardar.setMnemonic('G');
         btnGuardar.setText("Guardar");
-        btnGuardar.setToolTipText("Guarda el profesor");
+        btnGuardar.setToolTipText("Guarda el encargado");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarClic(evt);
@@ -98,7 +99,7 @@ public class VentanaAMEncargado extends JDialog {
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNombre)
-                            .addComponent(passClave, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtClave, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtCorreo)
                             .addComponent(txtApellido))))
                 .addContainerGap())
@@ -119,7 +120,7 @@ public class VentanaAMEncargado extends JDialog {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -136,10 +137,21 @@ public class VentanaAMEncargado extends JDialog {
     }//GEN-LAST:event_btnCancelarClic
 
     private void btnGuardarClic(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClic
-        //Completar
+        String nombre = this.txtNombre.getText().trim();
+        String apellido = this.txtApellido.getText().trim();
+        String correo = this.txtCorreo.getText().trim();
+        String clave = this.txtClave.getText().trim();
+        Encargado unEncargado = new Encargado(correo, clave, nombre, apellido);
+        this.encargados.add(unEncargado);
+        
+        System.out.println("Encargados");
+        System.out.println("=========");
+        for(Encargado p : this.encargados) {
+            p.mostrar();
+            System.out.println();
     }//GEN-LAST:event_btnGuardarClic
 
-
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
@@ -147,8 +159,8 @@ public class VentanaAMEncargado extends JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPasswordField passClave;
     private javax.swing.JTextField txtApellido;
+    private javax.swing.JPasswordField txtClave;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables

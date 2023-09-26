@@ -110,7 +110,7 @@
       <Properties>
         <Property name="mnemonic" type="int" value="71"/>
         <Property name="text" type="java.lang.String" value="Guardar"/>
-        <Property name="toolTipText" type="java.lang.String" value="Guarda el profesor"/>
+        <Property name="toolTipText" type="java.lang.String" value="Guarda el cliente"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarClic"/>

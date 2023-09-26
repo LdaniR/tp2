@@ -8,16 +8,16 @@ package usuarios.vistas;
 import java.awt.Dialog;
 import java.util.ArrayList;
 import javax.swing.JDialog;
-import usuarios.modelos.Empleado;
+import usuarios.modelos.Cliente;
 
-public class VentanaAMEmpleado extends JDialog {
-    private ArrayList<Empleado> empleados = new ArrayList<>();
+public class VentanaAMCliente extends JDialog {
+    private ArrayList<Cliente> clientes = new ArrayList<>();
     
     /**
      * Constructor
      * @param ventanaPadre ventana padre 
      */
-    public VentanaAMEmpleado(Dialog ventanaPadre) {
+    public VentanaAMCliente(Dialog ventanaPadre) {
         super(ventanaPadre, true);
         initComponents();
     }
@@ -55,7 +55,7 @@ public class VentanaAMEmpleado extends JDialog {
 
         btnGuardar.setMnemonic('G');
         btnGuardar.setText("Guardar");
-        btnGuardar.setToolTipText("Guarda el profesor");
+        btnGuardar.setToolTipText("Guarda el cliente");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarClic(evt);
@@ -136,7 +136,19 @@ public class VentanaAMEmpleado extends JDialog {
     }//GEN-LAST:event_btnCancelarClic
 
     private void btnGuardarClic(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClic
-        //Completar
+        String correo = this.txtCorreo.getText().trim();
+        String apellido = this.txtApellido.getText().trim();
+        String nombre = this.txtNombre.getText().trim();
+        String clave = new String(this.passClave.getPassword());
+        Cliente unCliente = new Cliente(correo, clave, apellido, nombre);
+        this.clientes.add(unCliente);
+        
+        System.out.println("Clientes");
+        System.out.println("========");
+        for(Cliente c : this.clientes) {
+            c.mostrar();
+            System.out.println();
+        }
     }//GEN-LAST:event_btnGuardarClic
 
 

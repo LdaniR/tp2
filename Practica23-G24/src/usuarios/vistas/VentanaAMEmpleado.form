@@ -33,7 +33,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -43,7 +43,7 @@
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtNombre" max="32767" attributes="0"/>
-                          <Component id="passClave" alignment="1" max="32767" attributes="0"/>
+                          <Component id="txtClave" alignment="1" max="32767" attributes="0"/>
                           <Component id="txtCorreo" max="32767" attributes="0"/>
                           <Component id="txtApellido" max="32767" attributes="0"/>
                       </Group>
@@ -72,7 +72,7 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="passClave" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtClave" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
@@ -110,7 +110,7 @@
       <Properties>
         <Property name="mnemonic" type="int" value="71"/>
         <Property name="text" type="java.lang.String" value="Guardar"/>
-        <Property name="toolTipText" type="java.lang.String" value="Guarda el profesor"/>
+        <Property name="toolTipText" type="java.lang.String" value="Guarda el empleado"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarClic"/>
@@ -136,7 +136,10 @@
         <Property name="toolTipText" type="java.lang.String" value="Documento del profesor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="passClave">
+    <Component class="javax.swing.JPasswordField" name="txtClave">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtClaveActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
