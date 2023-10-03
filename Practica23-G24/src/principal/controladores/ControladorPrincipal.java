@@ -2,6 +2,8 @@
 package principal.controladores;
 
 import java.util.ArrayList;
+import productos.modelos.Categoria;
+import productos.modelos.Estado;
 import productos.modelos.Producto;
 import usuarios.modelos.Cliente;
 import usuarios.modelos.Empleado;
@@ -61,9 +63,9 @@ public class ControladorPrincipal {
          
         System.out.println("#################### ");
         System.out.println("PRODUCTOS");
-        Producto p1 = new Producto(1,1250.0f,"Milanesa con puré", "PLATO PRINCIPAL","DISPONIBLE");
-        Producto p2= new Producto(2,150.70f, "Empanadas","PLATO PRINCIPAL","DISPONIBLE");
-        Producto p3 = new Producto(3,850.0f,"Flan con dulce","POSTRE","NO DISPONIBLE");
+        Producto p1 = new Producto(1,1250.0f,"Milanesa con puré", Categoria.PLATO_PRINCIPAL, Estado.DISPONIBLE);
+        Producto p2= new Producto(2,150.70f, "Empanadas", Categoria.PLATO_PRINCIPAL, Estado.DISPONIBLE);
+        Producto p3 = new Producto(3,850.0f,"Flan con dulce",Categoria.POSTRE, Estado.NO_DISPONIBLE);
         
 //        p1.codigo=1;
 //        p1.descripcion="Milanesa con puré";
@@ -102,7 +104,7 @@ public class ControladorPrincipal {
 //       PUNT0 10
         System.out.println("_______________Punto 10______________\n");
 
-        Producto p4 = new Producto(4,850.0f,"helado","POSTRE","NO DISPONIBLE");
+        Producto p4 = new Producto(4,850.0f,"helado",Categoria.POSTRE,Estado.NO_DISPONIBLE);
         Empleado e4= new Empleado("empleado4@mail.com","clave_4","Nombre_4","Apellido_4");
         Cliente c1 = new Cliente("mail1@gmail.com", "clave_1", "nombre_1","apellido_1");
         

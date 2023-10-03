@@ -9,10 +9,10 @@ public class Producto {
     private int codigo;
     private float precio;
     private String descripcion;
-    private String categoria;
-    private String estado;
+    private Categoria categoria;
+    private Estado estado;
 
-    public Producto(int codigo, float precio, String descripcion, String categoria, String estado) {
+    public Producto(int codigo, float precio, String descripcion, Categoria categoria, Estado estado) {
         this.codigo = codigo;
         this.precio = precio;
         this.descripcion = descripcion;
