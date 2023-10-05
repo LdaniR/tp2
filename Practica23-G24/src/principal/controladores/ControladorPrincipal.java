@@ -1,7 +1,9 @@
 
 package principal.controladores;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import pedidos.modelos.Pedido;
 import productos.modelos.Categoria;
 import productos.modelos.Estado;
 import productos.modelos.Producto;
@@ -120,6 +122,16 @@ public class ControladorPrincipal {
         
         for (Producto p: listaProductos)
         System.out.println(p);
+        
+        LocalDateTime fechaActual = LocalDateTime.now();
+        
+//        
+//        Pedido otroPedido = new Pedido(10, fechaActual, pedidos.modelos.Estado.CREADO, c1);
+//        System.out.println("Datos: " + otroPedido);
+
+        Pedido unPedido = new Pedido(10, fechaActual, pedidos.modelos.Estado.CREADO, c1);
+
+        unPedido.mostrar(unPedido);
     }
     
     

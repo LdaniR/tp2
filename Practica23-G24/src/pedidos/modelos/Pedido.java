@@ -4,7 +4,9 @@
  */
 package pedidos.modelos;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import usuarios.modelos.Cliente;
 
 /**
@@ -23,6 +25,20 @@ public class Pedido {
         this.estado = estado;
         this.cliente = cliente;
     }
+
+//    public Pedido(int numero, LocalDate fecha, Estado estado, Cliente cliente) {
+//        this.numero = numero;
+//        this.fechaYHora = LocalDateTime.now();
+//        this.fechaYHora = this.fechaYHora.withYear(fecha.getYear()).withMonth(fecha.getMonthValue()).withDayOfMonth(fecha.getDayOfMonth());
+//        this.estado = estado;
+//        this.cliente = cliente;
+//    }
+
+    @Override
+    public String toString() {
+        return "Pedido{" + "numero=" + numero + ", fechaYHora=" + fechaYHora + ", estado=" + estado + ", cliente=" + cliente + '}';
+    }
+    
 
     public Cliente verCliente() {
         return cliente;
@@ -48,9 +64,31 @@ public class Pedido {
         this.estado = estado;
     }
 
- public void asignarFecha(){
+    public void asignarFecha(LocalDate fecha){
+        this.fechaYHora = this.fechaYHora.withYear(fecha.getYear()).withMonth(fecha.getMonthValue()).withDayOfMonth(fecha.getDayOfMonth());
+    }
     
- }
+    public LocalDate verFecha() {
+        LocalDate fecha = this.fechaYHora.toLocalDate();
+        return fecha;
+    }
+    
+    public void asignarHora(LocalTime hora){
+        this.fechaYHora = this.fechaYHora.withHour(hora.getHour()).withMinute(hora.getMinute());
+    }
+    
+    public LocalTime verHora() {
+        LocalTime hora = this.fechaYHora.toLocalTime();
+        return hora;
+    }
+    
+    
+    public void mostrar(Pedido pedido){
+    
+        System.out.println("\nNumero: " + this.numero + "\nFecha: " + this.fechaYHora.toLocalDate() + "\t\t\t\tHora: " + this.fechaYHora.toLocalTime() + "\nCliente: " + this.cliente.mostrarNombre() + this.cliente.mostrarApellido() + "\nEstado: " + this.estado);
+    
+    }
+    
     
     
     
