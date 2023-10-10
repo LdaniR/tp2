@@ -15,5 +15,12 @@ public class Encargado {
         System.out.println("El encargado: "+ mail +  "\n" + contraseña + "\n" + nombre + "\n" + apellido + "\n");
         
     } 
-    
+
+    public Encargado(String mail, String contraseña, String nombre, String apellido) {
+        this.mail = mail;
+        this.contraseña = contraseña;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
 }

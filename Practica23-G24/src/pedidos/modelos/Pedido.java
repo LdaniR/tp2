@@ -7,6 +7,7 @@ package pedidos.modelos;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import usuarios.modelos.Cliente;
 
 /**
@@ -18,21 +19,15 @@ public class Pedido {
     private LocalDateTime fechaYHora;
     private Estado estado;
     private Cliente cliente;
+    private ArrayList<ProductoDelPedido> unProductoDelPedido;
 
-    public Pedido(int numero, LocalDateTime fechaYHora, Estado estado, Cliente cliente) {
+    public Pedido(int numero, LocalDateTime fechaYHora, ArrayList<ProductoDelPedido> lista, Cliente cliente) {
         this.numero = numero;
         this.fechaYHora = fechaYHora;
-        this.estado = estado;
+        this.unProductoDelPedido = lista;
         this.cliente = cliente;
+        
     }
-
-//    public Pedido(int numero, LocalDate fecha, Estado estado, Cliente cliente) {
-//        this.numero = numero;
-//        this.fechaYHora = LocalDateTime.now();
-//        this.fechaYHora = this.fechaYHora.withYear(fecha.getYear()).withMonth(fecha.getMonthValue()).withDayOfMonth(fecha.getDayOfMonth());
-//        this.estado = estado;
-//        this.cliente = cliente;
-//    }
 
     @Override
     public String toString() {
@@ -61,7 +56,7 @@ public class Pedido {
     }
 
     public void asignarEstado(Estado estado) {
-        this.estado = estado;
+        this.estado = Estado.CREADO;
     }
 
     public void asignarFecha(LocalDate fecha){
@@ -81,16 +76,33 @@ public class Pedido {
         LocalTime hora = this.fechaYHora.toLocalTime();
         return hora;
     }
+
+    public ArrayList<ProductoDelPedido> verUnProductoDelPedido() {
+        return unProductoDelPedido;
+    }
+
+    public void asignarUnProductoDelPedido(ArrayList<ProductoDelPedido> unProductoDelPedido) {
+        this.unProductoDelPedido = unProductoDelPedido;
+    }
+    
     
     
     public void mostrar(Pedido pedido){
     
         System.out.println("\nNumero: " + this.numero + "\nFecha: " + this.fechaYHora.toLocalDate() + "\t\t\t\tHora: " + this.fechaYHora.toLocalTime() + "\nCliente: " + this.cliente.mostrarNombre() + this.cliente.mostrarApellido() + "\nEstado: " + this.estado);
-    
+        System.out.println("        Producto            Cantidad\n");
+        System.out.println("        ============================\n");
+        
+        
+    for (ProductoDelPedido p : unProductoDelPedido){
+        System.out.println("        " + p+ "      " + p.cantidad + "\n");
+        
     }
     
     
     
     
+    
+}
 }
 
