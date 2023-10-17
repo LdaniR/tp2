@@ -18,6 +18,27 @@ public class ProductoDelPedido {
         this.cantidad = cantidad;
         this.unProducto = unProducto;
     }
+
+    public int verCantidad() {
+        return cantidad;
+    }
+
+    public void asignarCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Producto verUnProducto() {
+        return unProducto;
+    }
+
+    public void asignarUnProducto(Producto unProducto) {
+        this.unProducto = unProducto;
+    }
+
+    @Override
+    public String toString() {
+        return  unProducto.getDescripcion();
+    }
     
     
     

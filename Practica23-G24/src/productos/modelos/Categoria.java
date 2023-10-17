@@ -10,11 +10,19 @@ package productos.modelos;
  */
 public enum Categoria {
     
-    ENTRADA, PLATO_PRINCIPAL, POSTRE;
+    ENTRADA ("ENTRADA"), 
+    PLATO_PRINCIPAL ("PLATO_PRINCIPAL"), 
+    POSTRE ("POSTRE");
+    
+    private String valor;
 
+    private Categoria (String valor){
+        this.valor = valor;
+    }
+    
     @Override
     public String toString() {
-        return "Categoria{" + '}';
+        return this.valor;
     }
     
 }

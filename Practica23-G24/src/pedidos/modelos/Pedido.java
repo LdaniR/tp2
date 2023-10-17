@@ -10,10 +10,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import usuarios.modelos.Cliente;
 
-/**
- *
- * @author estudiante
- */
+
 public class Pedido {
     private int numero;
     private LocalDateTime fechaYHora;
@@ -60,7 +57,7 @@ public class Pedido {
     }
 
     public void asignarFecha(LocalDate fecha){
-        this.fechaYHora = this.fechaYHora.withYear(fecha.getYear()).withMonth(fecha.getMonthValue()).withDayOfMonth(fecha.getDayOfMonth());
+        this.fechaYHora = this.fechaYHora;
     }
     
     public LocalDate verFecha() {
@@ -69,7 +66,7 @@ public class Pedido {
     }
     
     public void asignarHora(LocalTime hora){
-        this.fechaYHora = this.fechaYHora.withHour(hora.getHour()).withMinute(hora.getMinute());
+        this.fechaYHora = this.fechaYHora;
     }
     
     public LocalTime verHora() {
@@ -89,13 +86,13 @@ public class Pedido {
     
     public void mostrar(Pedido pedido){
     
-        System.out.println("\nNumero: " + this.numero + "\nFecha: " + this.fechaYHora.toLocalDate() + "\t\t\t\tHora: " + this.fechaYHora.toLocalTime() + "\nCliente: " + this.cliente.mostrarNombre() + this.cliente.mostrarApellido() + "\nEstado: " + this.estado);
+        System.out.println("\nNumero: " + this.numero + "\nFecha: " + this.fechaYHora.toLocalDate() + "\t\t\t\tHora: " + this.fechaYHora.toLocalTime() + "\nCliente: " + this.cliente.verApellido() + ", " + this.cliente.verNombre() + "\nEstado: " + this.estado.CREADO);
         System.out.println("        Producto            Cantidad\n");
         System.out.println("        ============================\n");
         
         
     for (ProductoDelPedido p : unProductoDelPedido){
-        System.out.println("        " + p+ "      " + p.cantidad + "\n");
+        System.out.println("        " + p.toString() + "      " + p.cantidad + "\n");
         
     }
     

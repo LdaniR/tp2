@@ -3,6 +3,7 @@ package principal.controladores;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+//import pedidos.modelos.Estado;
 import pedidos.modelos.Pedido;
 import pedidos.modelos.ProductoDelPedido;
 import productos.modelos.Categoria;
@@ -25,9 +26,9 @@ public class ControladorPrincipal  {
         ArrayList<Producto> productos = new ArrayList<>();
         ArrayList<Pedido> pedidos = new ArrayList<>();
         
-        Cliente unCliente1 = new Cliente("cliente1@bar.com", "claveCliente1", "ApellidoCliente1", "NombreCliente1");        
-        Cliente unCliente2 = new Cliente("cliente2@bar.com", "claveCliente2", "ApellidoCliente2", "NombreCliente2");       
-        Cliente unCliente3 = new Cliente("cliente3@bar.com", "claveCliente3", "ApellidoCliente3", "NombreCliente3");
+        Cliente unCliente1 = new Cliente("cliente1@bar.com", "claveCliente1", "NombreCliente1", "ApellidoCliente1");        
+        Cliente unCliente2 = new Cliente("cliente2@bar.com", "claveCliente2", "NombreCliente2", "ApellidoCliente2");       
+        Cliente unCliente3 = new Cliente("cliente3@bar.com", "claveCliente3", "NombreCliente3", "ApellidoCliente3");
         
         clientes.add(unCliente1);
         clientes.add(unCliente2);
@@ -97,9 +98,6 @@ public class ControladorPrincipal  {
             c.mostrar();
             System.out.println();
         }
-        System.out.println();
-        
-        System.out.println(unProducto1);
         
         ArrayList<ProductoDelPedido> pdp1 = new ArrayList<>();
         pdp1.add(new ProductoDelPedido(unProducto1, 1));

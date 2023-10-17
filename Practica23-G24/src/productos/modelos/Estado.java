@@ -10,11 +10,19 @@ package productos.modelos;
  */
 public enum Estado {
     
-    DISPONIBLE, NO_DISPONIBLE;
+    DISPONIBLE ("DISPONIBLE"), 
+    NO_DISPONIBLE ("NO_DISPONIBLE");
 
+    private String valor;
+    
+    private Estado (String valor){
+        this.valor = valor;
+    }
+    
+    
     @Override
     public String toString() {
-        return "Estado{" + '}';
+        return this.valor;
     }
 }
 
