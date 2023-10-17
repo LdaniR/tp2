@@ -91,7 +91,7 @@ public class ControladorPrincipal  {
         System.out.println();
         
         
-        unCliente1.asignarMail("cliente10@bar.com");
+        unCliente1.asignarCorreo("cliente10@bar.com");
         System.out.println("Clientes");
         System.out.println("========");
         for(Cliente c : clientes) {
@@ -100,26 +100,57 @@ public class ControladorPrincipal  {
         }
         
         ArrayList<ProductoDelPedido> pdp1 = new ArrayList<>();
-        pdp1.add(new ProductoDelPedido(unProducto1, 1));
-        pdp1.add(new ProductoDelPedido(unProducto2, 2));
-        Pedido unPedido1 = new Pedido(1, LocalDateTime.now(), pdp1, unCliente1);        
+        ProductoDelPedido producto1pedido1 = new ProductoDelPedido(unProducto1, 1);
+        ProductoDelPedido producto2pedido1 = new ProductoDelPedido(unProducto1, 2);
+        ProductoDelPedido producto3pedido1 = new ProductoDelPedido(unProducto2, 1);
+        
+        if(!pdp1.contains(producto1pedido1))
+            pdp1.add(producto1pedido1);
+        if(!pdp1.contains(producto2pedido1))
+            pdp1.add(producto2pedido1);
+        if(!pdp1.contains(producto3pedido1))
+            pdp1.add(producto3pedido1);
         
         ArrayList<ProductoDelPedido> pdp2 = new ArrayList<>();
-        pdp2.add(new ProductoDelPedido(unProducto1, 10));
-        pdp2.add(new ProductoDelPedido(unProducto2, 20));
-        Pedido unPedido2 = new Pedido(2, LocalDateTime.now(), pdp2, unCliente2);        
+        ProductoDelPedido producto1pedido2 = new ProductoDelPedido(unProducto1, 1121);
+        ProductoDelPedido producto2pedido2 = new ProductoDelPedido(unProducto1, 232);
+        ProductoDelPedido producto3pedido2 = new ProductoDelPedido(unProducto1, 132);
         
-        ArrayList<ProductoDelPedido> pdp3 = new ArrayList<>();
-        pdp3.add(new ProductoDelPedido(unProducto1, 100));
-        pdp3.add(new ProductoDelPedido(unProducto2, 200));
-        Pedido unPedido3 = new Pedido(3, LocalDateTime.now(), pdp3, unCliente3);        
+        if(!pdp2.contains(producto1pedido2))
+            pdp2.add(producto1pedido2);
+        if(!pdp2.contains(producto2pedido2))
+            pdp2.add(producto2pedido2);
+        if(!pdp2.contains(producto3pedido2))
+            pdp2.add(producto3pedido2);   
         
-        pedidos.add(unPedido1);
-        pedidos.add(unPedido2);
-        pedidos.add(unPedido3);
+           ArrayList<ProductoDelPedido> pdp3 = new ArrayList<>();
+        ProductoDelPedido producto1pedido3 = new ProductoDelPedido(unProducto1, 1213);
+        ProductoDelPedido producto2pedido3 = new ProductoDelPedido(unProducto3, 212312);
+        ProductoDelPedido producto3pedido3 = new ProductoDelPedido(unProducto2, 1321283);
+        
+        if(!pdp3.contains(producto1pedido3))
+            pdp3.add(producto1pedido3);
+        if(!pdp3.contains(producto2pedido3))
+            pdp3.add(producto2pedido3);
+        if(!pdp3.contains(producto3pedido3))
+            pdp3.add(producto3pedido3);
+        
+        Pedido unPedido1 = new Pedido(1, LocalDateTime.now(), pdp1, unCliente1); 
+        Pedido unPedido2 = new Pedido(3, LocalDateTime.now(), pdp2, unCliente2);
+        Pedido unPedido3 = new Pedido(3, LocalDateTime.now(), pdp3, unCliente3);
+        
+        
+        if(!pedidos.contains(unPedido1))
+            pedidos.add(unPedido1);
+        if(!pedidos.contains(unPedido2))
+            pedidos.add(unPedido2);
+        if(!pedidos.contains(unPedido3))
+            pedidos.add(unPedido3);
+        
         
         System.out.println("Pedidos");
         System.out.println("=======");
+        
         for(Pedido p : pedidos) {
             p.mostrar(p);
             System.out.println();
@@ -127,4 +158,6 @@ public class ControladorPrincipal  {
         System.out.println();
         
     }   
+ 
+    
 }

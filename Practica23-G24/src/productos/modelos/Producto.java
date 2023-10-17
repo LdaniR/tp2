@@ -30,44 +30,67 @@ public class Producto {
         
     }
 
-    public int getCodigo() {
+    public int verCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void asignarCodigo(int codigo) {
         this.codigo = codigo;
     }
 
-    public float getPrecio() {
+    public float verPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void asignarPrecio(float precio) {
         this.precio = precio;
     }
 
-    public String getDescripcion() {
+    public String verDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void asignarDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public Categoria getCategoria() {
+    public Categoria verCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void asignarCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
-    public Estado getEstado() {
+    public Estado verEstado() {
         return estado;
     }
 
-    public void setEstado(Estado estado) {
+    public void asignarEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 41 * hash + this.codigo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Producto other = (Producto) obj;
+        return this.codigo == other.codigo;
     }
     
 }

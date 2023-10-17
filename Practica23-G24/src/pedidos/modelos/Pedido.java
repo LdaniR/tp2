@@ -82,8 +82,7 @@ public class Pedido {
         this.unProductoDelPedido = unProductoDelPedido;
     }
     
-    
-    
+   
     public void mostrar(Pedido pedido){
     
         System.out.println("\nNumero: " + this.numero + "\nFecha: " + this.fechaYHora.toLocalDate() + "\t\t\t\tHora: " + this.fechaYHora.toLocalTime() + "\nCliente: " + this.cliente.verApellido() + ", " + this.cliente.verNombre() + "\nEstado: " + this.estado.CREADO);
@@ -101,5 +100,28 @@ public class Pedido {
     
     
 }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + this.numero;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        final Pedido other = (Pedido) obj;
+        return this.numero == other.numero;
+    }
 }
 
